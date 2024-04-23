@@ -12,7 +12,6 @@ async function displaySelectedNamazTimings(city) {
     const namazTimings = await fetchNamazTimings(city);
     timingsDiv.innerHTML = ""; // Clear loading message
 
-    // Display selected Namaz timings
     const selectedTimings = {
       Fajr: namazTimings.Fajr,
       Dhuhr: namazTimings.Dhuhr,
@@ -21,7 +20,6 @@ async function displaySelectedNamazTimings(city) {
       Isha: namazTimings.Isha,
     };
 
-    // Display each selected Namaz timing
     Object.entries(selectedTimings).forEach(([key, value]) => {
       timingsDiv.innerHTML += `<p>${key}: ${value}</p>`;
     });
@@ -31,7 +29,6 @@ async function displaySelectedNamazTimings(city) {
   }
 }
 
-// Event listener for form submission
 document
   .getElementById("cityForm")
   .addEventListener("submit", function (event) {
